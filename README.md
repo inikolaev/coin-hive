@@ -55,6 +55,7 @@ Options:
   --port            Port for the miner server
   --host            Host for the miner server
   --threads         Number of threads for the miner
+  --throttle        Set the fraction of time that threads should be idle
   --proxy           Proxy socket 5/4, for example: socks5://127.0.0.1:9050
   --puppeteer-url   URL where puppeteer will point to, by default is miner server (host:port)
   --miner-url       URL of CoinHive's JavaScript miner, can be set to use a proxy
@@ -75,6 +76,8 @@ Options:
   - `host`: Host for the miner server. Default is `localhost`.
 
   - `threads`: Number of threads. Default is `navigator.hardwareConcurrency` (number of CPU cores).
+
+  - `throttle`: Set the fraction of time that threads should be idle. Default is 0 (full speed)
 
   - `proxy`: Puppeteer's proxy socket 5/4 (ie: `socks5://127.0.0.1:9050`).
 
@@ -131,6 +134,8 @@ All the following environment variables can be used to configure the miner from 
 - `COINHIVE_INTERVAL`: The interval on which the miner reports an update
 
 - `COINHIVE_THREADS`: Number of threads
+
+- `COINHIVE_THROTTLE`: Set the fraction of time that threads should be idle
 
 - `COINHIVE_PORT`: The port that will be used to launch the server, and where puppeteer will point to
 
